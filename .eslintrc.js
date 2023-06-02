@@ -6,7 +6,6 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
     'plugin:json/recommended',
-    'plugin:jest-dom/recommended',
     'plugin:react/recommended',
   ],
   ignorePatterns: ['dist'],
@@ -19,7 +18,7 @@ module.exports = {
     },
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['prettier', '@typescript-eslint', 'jest-dom', 'unused-imports', 'sort-keys-fix', 'react'],
+  plugins: ['prettier', '@typescript-eslint', 'unused-imports', 'sort-keys-fix', 'react'],
   root: true,
   rules: {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
