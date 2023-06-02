@@ -1,6 +1,6 @@
 import { Controller, Get, Post, UploadedFile, UseInterceptors } from '@nestjs/common';
-import { AppService } from './app.service';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
@@ -13,7 +13,7 @@ export class AppController {
 
   @Post('/csv')
   @UseInterceptors(FileInterceptor('file'))
-  uploadCsv(@UploadedFile() file: Express.Multer.File) {
+  uploadCsv(@UploadedFile() file: Express.Multer.File): Express.Multer.File {
     return file;
   }
 }
