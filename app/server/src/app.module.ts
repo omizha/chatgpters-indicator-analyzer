@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { MulterModule } from '@nestjs/platform-express';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { SummarizeModule } from './summarize/summarize.module';
 
 @Module({
   controllers: [AppController],
@@ -9,6 +10,7 @@ import { AppService } from './app.service';
     MulterModule.register({
       dest: './upload',
     }),
+    SummarizeModule,
   ],
   providers: [AppService],
 })
