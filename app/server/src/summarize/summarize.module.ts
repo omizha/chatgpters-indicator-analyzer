@@ -1,6 +1,6 @@
-import { Module } from "@nestjs/common";
-import { SummarizeController } from "./summarize.controller";
-import { SummarizeService } from "./summarize.service";
+import { Module } from '@nestjs/common';
+import { SummarizeController } from './summarize.controller';
+import { SummarizeService } from './summarize.service';
 
 @Module({
   controllers: [SummarizeController],
