@@ -3,7 +3,6 @@ import { loadSummarizationChain } from 'langchain/chains';
 import { ChatOpenAI } from 'langchain/chat_models/openai';
 import { ChainValues } from 'langchain/dist/schema';
 import { Document } from 'langchain/document';
-import { CheerioWebBaseLoader } from 'langchain/document_loaders/web/cheerio';
 import { PromptTemplate } from 'langchain/prompts';
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter';
 import { CustomerWebBaseLoader } from './helpers/customerWebBaseLoader';
