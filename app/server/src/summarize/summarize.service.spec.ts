@@ -22,7 +22,7 @@ describe('SummarizeService', () => {
   });
 
   it('should scrapper', async () => {
-    jest.spyOn(await import('langchain/document_loaders/web/cheerio'), 'CheerioWebBaseLoader').mockImplementation(
+    jest.spyOn(await import('langchain/document_loaders/web/puppeteer'), 'PuppeteerWebBaseLoader').mockImplementation(
       jest.fn().mockImplementation(() => ({
         load: jest.fn().mockResolvedValue([
           new Document({
