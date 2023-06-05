@@ -19,6 +19,7 @@
     "@nestjs/config": "^2.3.2",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "axios": "^1.4.0",
     "cheerio": "^1.0.0-rc.12",
     "cross-env": "^7.0.3",
     "langchain": "^0.0.90",
