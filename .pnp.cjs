@@ -10583,6 +10583,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-unused-imports", "virtual:e7d5de1658e3c3a52e74a8695f71f27f0960006707acdd307386720e927d5f3874750cdeff18555fc4347ccab87d239509696ef85757b4e1ff3ab66a1f99f8e1#npm:2.0.0"],\
             ["jest", "virtual:e013669161a03566465149fe2c0dc3fd50130a5eb3171832654371969c217ed69884542ac16d3220768a40e0ba2069e5f695451f061ffd07bf7bb9e454d2afc2#npm:29.5.0"],\
             ["langchain", "virtual:e013669161a03566465149fe2c0dc3fd50130a5eb3171832654371969c217ed69884542ac16d3220768a40e0ba2069e5f695451f061ffd07bf7bb9e454d2afc2#npm:0.0.90"],\
+            ["multer", "npm:1.4.4-lts.1"],\
             ["prettier", "npm:2.8.8"],\
             ["reflect-metadata", "npm:0.1.13"],\
             ["rxjs", "npm:7.8.1"],\
