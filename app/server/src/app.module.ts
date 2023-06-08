@@ -6,12 +6,7 @@ import { SummarizeModule } from './summarize/summarize.module';
 
 @Module({
   controllers: [AppController],
-  imports: [
-    MulterModule.register({
-      dest: './upload',
-    }),
-    SummarizeModule,
-  ],
+  imports: [MulterModule.register(), SummarizeModule],
   providers: [AppService],
 })
 export class AppModule {}
