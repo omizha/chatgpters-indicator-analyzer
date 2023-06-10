@@ -79,6 +79,10 @@ export class SummarizeService {
    */
   async summarizeUrl(url: string): Promise<ChainValues> {
     const docs = await this.scrapper(url);
-    return this.summarize(docs);
+    const summary = await this.summarize(docs);
+    return {
+      docs: docs?.[0],
+      summary,
+    };
   }
 }
