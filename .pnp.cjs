@@ -3938,6 +3938,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["centra", [\
+        ["npm:2.6.0", {\
+          "packageLocation": "./.yarn/cache/centra-npm-2.6.0-2dce7cb28c-3b4d44762b.zip/node_modules/centra/",\
+          "packageDependencies": [\
+            ["centra", "npm:2.6.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["chalk", [\
         ["npm:2.4.2", {\
           "packageLocation": "./.yarn/cache/chalk-npm-2.4.2-3ea16dd91e-ec3661d38f.zip/node_modules/chalk/",\
@@ -9849,6 +9858,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["phin", [\
+        ["npm:3.7.0", {\
+          "packageLocation": "./.yarn/cache/phin-npm-3.7.0-c9bd8efbed-b0a35e9436.zip/node_modules/phin/",\
+          "packageDependencies": [\
+            ["phin", "npm:3.7.0"],\
+            ["centra", "npm:2.6.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["picocolors", [\
         ["npm:1.0.0", {\
           "packageLocation": "./.yarn/cache/picocolors-npm-1.0.0-d81e0b1927-a2e8092dd8.zip/node_modules/picocolors/",\
@@ -10650,7 +10669,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ts-loader", "virtual:e013669161a03566465149fe2c0dc3fd50130a5eb3171832654371969c217ed69884542ac16d3220768a40e0ba2069e5f695451f061ffd07bf7bb9e454d2afc2#npm:9.4.3"],\
             ["ts-node", "virtual:e013669161a03566465149fe2c0dc3fd50130a5eb3171832654371969c217ed69884542ac16d3220768a40e0ba2069e5f695451f061ffd07bf7bb9e454d2afc2#npm:10.9.1"],\
             ["tsconfig-paths", "npm:4.2.0"],\
-            ["typescript", "patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=5da071"]\
+            ["typescript", "patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=5da071"],\
+            ["youtube-transcript", "npm:1.0.6"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -12220,6 +12240,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/yocto-queue-npm-0.1.0-c6c9a7db29-f77b3d8d00.zip/node_modules/yocto-queue/",\
           "packageDependencies": [\
             ["yocto-queue", "npm:0.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["youtube-transcript", [\
+        ["npm:1.0.6", {\
+          "packageLocation": "./.yarn/cache/youtube-transcript-npm-1.0.6-6a63f4cd34-7ca6a60883.zip/node_modules/youtube-transcript/",\
+          "packageDependencies": [\
+            ["youtube-transcript", "npm:1.0.6"],\
+            ["phin", "npm:3.7.0"]\
           ],\
           "linkType": "HARD"\
         }]\

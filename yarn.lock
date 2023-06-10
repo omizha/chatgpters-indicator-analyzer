@@ -2797,6 +2797,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"centra@npm:^2.6.0":
+  version: 2.6.0
+  resolution: "centra@npm:2.6.0"
+  checksum: 3b4d44762bceb9e20f7e45d01ffb9e462523cf8a0186f6710c08863f0455bceabfbcb754d6b01ea095c3bdee09c4ebef912669dc2b391a9af400e9ba7e398bc5
+  languageName: node
+  linkType: hard
+
 "chalk@npm:4.1.2, chalk@npm:^4.0.0, chalk@npm:^4.1.0, chalk@npm:^4.1.1, chalk@npm:^4.1.2":
   version: 4.1.2
   resolution: "chalk@npm:4.1.2"
@@ -7651,6 +7658,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"phin@npm:^3.5.0":
+  version: 3.7.0
+  resolution: "phin@npm:3.7.0"
+  dependencies:
+    centra: ^2.6.0
+  checksum: b0a35e943615c40a3ccd7d6a2dd062568258e6b36dceed3150d13d28cad906e9028e756ad6efe66963b43937879e8a3593f986d17aac968d42982b4e8702e539
+  languageName: node
+  linkType: hard
+
 "picocolors@npm:^1.0.0":
   version: 1.0.0
   resolution: "picocolors@npm:1.0.0"
@@ -8371,6 +8387,7 @@ __metadata:
     ts-node: ^10.0.0
     tsconfig-paths: 4.2.0
     typescript: ^5.1.3
+    youtube-transcript: ^1.0.6
   languageName: unknown
   linkType: soft
 
@@ -9671,6 +9688,15 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: f77b3d8d00310def622123df93d4ee654fc6a0096182af8bd60679ddcdfb3474c56c6c7190817c84a2785648cdee9d721c0154eb45698c62176c322fb46fc700
+  languageName: node
+  linkType: hard
+
+"youtube-transcript@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "youtube-transcript@npm:1.0.6"
+  dependencies:
+    phin: ^3.5.0
+  checksum: 7ca6a608834d2eb43d2d353ad58bb3fa86663e2f5730146a768c5c3ac423911680451a38c57f827aa7af8fb7df78a4ce3702019d988d87d9ed266f9d81aeb833
   languageName: node
   linkType: hard
 
