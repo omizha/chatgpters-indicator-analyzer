@@ -6,6 +6,8 @@ import { Document } from 'langchain/document';
 import { PromptTemplate } from 'langchain/prompts';
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter';
 import { CustomerWebBaseLoader } from './helpers/customerWebBaseLoader';
+import { isYouTubeUrl } from './helpers/urlValidation';
+import { YoutubeTranscriptLoader } from './helpers/youtubeTranscriptLoader';
 
 @Injectable()
 export class SummarizeService {
@@ -17,6 +19,11 @@ export class SummarizeService {
    */
   async scrapper(url: string): Promise<Document[]> {
     if (!url) throw new BadRequestException('url is required');
+
+    if (isYouTubeUrl(url)) {
+      return new YoutubeTranscriptLoader(url).load();
+    }
+
     // TODO: 네이버 블로그를 스크래핑 못하는 문제가 있음
     const loader = new CustomerWebBaseLoader(url);
     const docs = await loader.load();
