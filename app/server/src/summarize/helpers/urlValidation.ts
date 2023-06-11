@@ -9,3 +9,7 @@ export function isYouTubeUrl(url: string): boolean {
 export function isChatGPTersUrl(url: string): boolean {
   return url.includes('chatgpters.org');
 }
+
+export function isNaverBlogUrl(url: string): boolean {
+  return url.includes('blog.naver.com');
+}
