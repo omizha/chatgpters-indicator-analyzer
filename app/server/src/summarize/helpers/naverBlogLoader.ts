@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import { Document } from 'langchain/document';
 import { CheerioWebBaseLoader } from 'langchain/document_loaders/web/cheerio';
-import { USER_AGENT } from './constants';
+import { USER_AGENT_MOBILE } from './constants';
 import { stripHtmlAndNewLineAndExtraSpace } from './stringHelper';
 
 export class NaverBlogLoader extends CheerioWebBaseLoader {
@@ -24,7 +24,7 @@ export class NaverBlogLoader extends CheerioWebBaseLoader {
     const url = this.getMobileUrl(this.webPath);
     const response = await this.caller.call(fetch, url, {
       headers: {
-        'User-Agent': USER_AGENT,
+        'User-Agent': USER_AGENT_MOBILE,
       },
       signal: this.timeout ? AbortSignal.timeout(this.timeout) : undefined,
     });

@@ -1,6 +1,7 @@
 import * as cheerio from 'cheerio';
 import { Document } from 'langchain/document';
 import { CheerioWebBaseLoader } from 'langchain/document_loaders/web/cheerio';
+import { USER_AGENT_MOBILE } from './constants';
 
 export class CustomerWebBaseLoader extends CheerioWebBaseLoader {
   constructor(webPath: string) {
@@ -10,8 +11,7 @@ export class CustomerWebBaseLoader extends CheerioWebBaseLoader {
   async scrape(): Promise<cheerio.CheerioAPI> {
     const response = await this.caller.call(fetch, this.webPath, {
       headers: {
-        'User-Agent':
-          'Mozilla/5.0 (iPhone14,3; U; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Mobile/19A346 Safari/602.1',
+        'User-Agent': USER_AGENT_MOBILE,
       },
       signal: this.timeout ? AbortSignal.timeout(this.timeout) : undefined,
     });
