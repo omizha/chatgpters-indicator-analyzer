@@ -7,8 +7,9 @@ import { PuppeteerWebBaseLoader } from 'langchain/document_loaders/web/puppeteer
 import { PromptTemplate } from 'langchain/prompts';
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter';
 import { CustomerWebBaseLoader } from './helpers/customerWebBaseLoader';
-import { isChatGPTersUrl, isYouTubeUrl } from './helpers/urlValidation';
+import { isChatGPTersUrl, isYouTubeUrl, isNaverBlogUrl } from './helpers/urlValidation';
 import { YoutubeTranscriptLoader } from './helpers/youtubeTranscriptLoader';
+import { NaverBlogLoader } from './helpers/naverBlogLoader';
 
 @Injectable()
 export class SummarizeService {
@@ -23,6 +24,10 @@ export class SummarizeService {
 
     if (isYouTubeUrl(url)) {
       return new YoutubeTranscriptLoader(url).load();
+    }
+
+    if (isNaverBlogUrl(url)) {
+      return new NaverBlogLoader(url).load();
     }
 
     if (isChatGPTersUrl(url)) {
