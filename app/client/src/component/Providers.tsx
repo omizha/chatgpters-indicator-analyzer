@@ -2,6 +2,7 @@
 
 import { Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 interface Props {
@@ -27,7 +28,10 @@ const Providers = ({ children }: Props) => {
   return (
     <ErrorBoundary fallback={<div>Error</div>}>
       <Suspense fallback={<div>Suspense</div>}>
-        <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+        <QueryClientProvider client={queryClient}>
+          {children}
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
       </Suspense>
     </ErrorBoundary>
   );
