@@ -3,11 +3,13 @@ import { loadSummarizationChain } from 'langchain/chains';
 import { ChatOpenAI } from 'langchain/chat_models/openai';
 import { ChainValues } from 'langchain/dist/schema';
 import { Document } from 'langchain/document';
+import { PuppeteerWebBaseLoader } from 'langchain/document_loaders/web/puppeteer';
 import { PromptTemplate } from 'langchain/prompts';
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter';
 import { CustomerWebBaseLoader } from './helpers/customerWebBaseLoader';
-import { isYouTubeUrl } from './helpers/urlValidation';
+import { isChatGPTersUrl, isYouTubeUrl, isNaverBlogUrl } from './helpers/urlValidation';
 import { YoutubeTranscriptLoader } from './helpers/youtubeTranscriptLoader';
+import { NaverBlogLoader } from './helpers/naverBlogLoader';
 
 @Injectable()
 export class SummarizeService {
@@ -22,6 +24,32 @@ export class SummarizeService {
 
     if (isYouTubeUrl(url)) {
       return new YoutubeTranscriptLoader(url).load();
+    }
+
+    if (isNaverBlogUrl(url)) {
+      return new NaverBlogLoader(url).load();
+    }
+
+    if (isChatGPTersUrl(url)) {
+      return new PuppeteerWebBaseLoader(url, {
+        async evaluate(page): Promise<string> {
+          page.on('console', (msg) => console.log('PAGE LOG:', msg.text()));
+          await page.waitForSelector('.main');
+          await page.waitForSelector('.skeleton-loader', { hidden: true });
+          return page.evaluate(() =>
+            document.body
+              .querySelector('.main')
+              .textContent?.replace(/(?<!\n\s)\n(?!\s\n)|(\n\s*\n)|(\s{2,})/g, '')
+              .trim(),
+          );
+        },
+        gotoOptions: {
+          waitUntil: 'domcontentloaded',
+        },
+        launchOptions: {
+          headless: 'new',
+        },
+      }).load();
     }
 
     // TODO: 네이버 블로그를 스크래핑 못하는 문제가 있음

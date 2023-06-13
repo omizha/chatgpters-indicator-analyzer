@@ -5,3 +5,11 @@ export function isYouTubeUrl(url: string): boolean {
   // 정규식과 매치되는지 확인
   return pattern.test(url);
 }
+
+export function isChatGPTersUrl(url: string): boolean {
+  return url.includes('chatgpters.org');
+}
+
+export function isNaverBlogUrl(url: string): boolean {
+  return url.includes('blog.naver.com');
+}
