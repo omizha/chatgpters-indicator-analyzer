@@ -6,7 +6,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "lint": "eslint \"app/**/*.ts\" --fix"
+    "lint": "eslint \"app/**/*.ts\" --fix",
+    "build": "yarn workspace client build && yarn workspace server build",
+    "serve": "pm2 startOrReload ecosystem.config.js --env production"
   },
   "devDependencies": {
     "@types/node": "^18.5.5",
